@@ -1,0 +1,13 @@
+.cv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30% 20% 1fr;
+    grid-template-areas:
+        "profile profile"
+        "introduction skills"
+        "experience education";
+    width: 62.0rem;
+    min-height: 79.4rem;
+    background-color: var(--white);
+    color: var(--black);
+}
