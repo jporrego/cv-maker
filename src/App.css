@@ -10,3 +10,8 @@
   background: var(--blue);
   background: linear-gradient(165deg, var(--blue) 0%, var(--purple-dark) 45%, var(--purple) 70%, var(--yellow) 100%);
 }
+
+textarea {
+  /*   font-family: var(--font-primary);
+  font-size: 1.1rem; */
+}

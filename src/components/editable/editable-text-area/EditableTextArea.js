@@ -28,20 +28,27 @@ function EditableTextArea({ text, setText }) {
   );
 
   const editableText = (
-    <div>
+    <div className="editable-text">
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></textarea>
       <button type="button" onClick={showForm}>
-        Dones
+        Save
       </button>
     </div>
   );
 
   return (
-    <div onMouseEnter={showEditBtn} onMouseLeave={hideEditBtn}>
-      {isFormVisible ? editableText : staticText}
+    <div>
+      <div
+        className="editable-text-area"
+        onMouseEnter={showEditBtn}
+        onMouseLeave={hideEditBtn}
+      >
+        {isFormVisible ? editableText : staticText}
+      </div>
+      <div className="close-modal" onClick={showForm}></div>
     </div>
   );
 }
