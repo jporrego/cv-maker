@@ -5,6 +5,24 @@
 
 }
 
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+}
+
+.icon {
+    height: 3rem;
+    color: var(--purple-dark);
+    transition: all .15s ease-out;
+}
+
+.icon:hover {
+    color: var(--purple);
+    transform: scale(1.05);
+}
+
 /* .skills::before {
     content: "";
     position: absolute;
