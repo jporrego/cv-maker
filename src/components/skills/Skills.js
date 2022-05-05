@@ -17,6 +17,20 @@ import SectionTitle from "../section-title/SectionTitle.js";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
 function Skills() {
+  /* ---------- Skills Component ----------*/
+  /* --- States ---
+     1. userSkills: Array of skills of the current user. Since this is just a front-end project 
+                    it simply has the icons to be displayed.
+
+     2. skillGallery: Array of all the skills the user can choose from.
+
+     --- Logic ---
+
+     The userSkills will be displayed as icons. When clicking the add button, a modal
+     will open displaying skillGallery, showing skills the user can add to their profile.
+     Skill gallery will always have the userSkills filtered out to avoid duplication.
+
+  */
   const [userSkills, setUserSkills] = useState([faJsSquare, faHtml5]);
   const [skillGallery, setSkillGallery] = useState([]);
 
@@ -34,7 +48,7 @@ function Skills() {
 
   useEffect(() => {
     loadSkillGallery();
-  }, []);
+  }, [userSkills]);
 
   const loadSkillGallery = () => {
     setSkillGallery(
@@ -44,20 +58,18 @@ function Skills() {
 
   const addSkill = (e) => {
     let iconName = "";
-    let editedName;
+
     if (e.target.parentNode.className === "icon-selection") {
       iconName = e.target.attributes[3].value;
     } else {
       iconName = e.target.parentNode.attributes[3].value;
     }
-
-    let splitName = iconName.replace("-", " ").split(" ");
-    splitName = splitName.map(
-      (word) => word.charAt(0).toUpperCase() + word.substring(1)
+    const newIcon = allSkillsList.filter(
+      (skill) => skill.iconName === iconName
     );
 
-    editedName = `fa${splitName.join("")}`;
-    console.log(editedName);
+    setUserSkills([...userSkills, newIcon[0]]);
+    console.log(userSkills);
   };
 
   const skillItems = userSkills.map((skill) => {
