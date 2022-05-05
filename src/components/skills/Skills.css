@@ -1,0 +1,15 @@
+.skills {
+    grid-area: skills;
+    border-left: .2rem solid var(--purple-light);
+    padding: 1rem 2rem 1rem 2rem;
+
+}
+
+/* .skills::before {
+    content: "";
+    position: absolute;
+    width: .4rem;
+    height: 100%;
+
+    background-color: var(--blue);
+} */

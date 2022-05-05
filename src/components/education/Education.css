@@ -1,0 +1,5 @@
+.education {
+    grid-area: education;
+    border-left: .2rem solid var(--purple-light);
+    padding: 1rem 2rem 1rem 2rem;
+}
