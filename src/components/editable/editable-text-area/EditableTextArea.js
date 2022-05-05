@@ -48,7 +48,7 @@ function EditableTextArea({ text, setText }) {
       >
         {isFormVisible ? editableText : staticText}
       </div>
-      <div className="close-modal" onClick={showForm}></div>
+      {isFormVisible && <div className="close-modal" onClick={showForm}></div>}
     </div>
   );
 }
