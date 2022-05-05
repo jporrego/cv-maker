@@ -1,9 +1,9 @@
 import React from "react";
 import "./SectionTitle.css";
 
-function SectionTitle({ title }) {
+function SectionTitle({ title, hAlignment }) {
   return (
-    <div className="section-title" style={{ justifyContent: "flex-end" }}>
+    <div className="section-title" style={{ justifyContent: hAlignment }}>
       {title}
     </div>
   );
