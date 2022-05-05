@@ -27,9 +27,10 @@ function Skills() {
   return (
     <div className="skills">
       <SectionTitle title={"skills"}></SectionTitle>
-      <div className="icons">
-        {skillItems}
-        {/*
+
+      <div className="icons-user">{skillItems}</div>
+
+      <div className="icon-selection">
         <FontAwesomeIcon icon={faJsSquare} className="icon" />
         <FontAwesomeIcon icon={faHtml5} className="icon" />
         <FontAwesomeIcon icon={faCss3Alt} className="icon" />
@@ -38,7 +39,7 @@ function Skills() {
         <FontAwesomeIcon icon={faPhp} className="icon" />
         <FontAwesomeIcon icon={faPython} className="icon" />
         <FontAwesomeIcon icon={faJava} className="icon" />
-        <FontAwesomeIcon icon={faGitAlt} className="icon" />*/}
+        <FontAwesomeIcon icon={faGitAlt} className="icon" />
       </div>
     </div>
   );
