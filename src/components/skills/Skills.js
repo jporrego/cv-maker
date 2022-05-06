@@ -31,14 +31,14 @@ function Skills() {
      Skill gallery will always have the userSkills filtered out to avoid duplication.
 
   */
-  const [userSkills, setUserSkills] = useState([faJsSquare, faHtml5]);
+  const [userSkills, setUserSkills] = useState([]);
   const [skillGallery, setSkillGallery] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const allSkillsList = [
-    faJsSquare,
     faHtml5,
     faCss3Alt,
+    faJsSquare,
     faReact,
     faNode,
     faPython,
@@ -50,12 +50,6 @@ function Skills() {
   useEffect(() => {
     loadSkillGallery();
   }, [userSkills]);
-
-  const skillItems = userSkills.map((skill) => {
-    return (
-      <FontAwesomeIcon key={skill.iconName} icon={skill} className="icon" />
-    );
-  });
 
   const loadSkillGallery = () => {
     setSkillGallery(
@@ -76,7 +70,22 @@ function Skills() {
     );
 
     setUserSkills([...userSkills, newIcon[0]]);
-    console.log(userSkills);
+    console.log(iconName);
+  };
+
+  const deleteSkill = (e) => {
+    let iconName = "";
+
+    if (e.target.parentNode.className === "icons-user") {
+      iconName = e.target.attributes[3].value;
+    } else {
+      iconName = e.target.parentNode.attributes[3].value;
+    }
+
+    const editedUserSkills = [...userSkills].filter(
+      (skill) => skill.iconName != iconName
+    );
+    setUserSkills(editedUserSkills);
   };
 
   const showModal = () => {
@@ -87,6 +96,17 @@ function Skills() {
     setIsModalVisible(false);
   };
 
+  const skillItems = userSkills.map((skill) => {
+    return (
+      <FontAwesomeIcon
+        key={skill.iconName}
+        icon={skill}
+        className="icon"
+        onClick={deleteSkill}
+      />
+    );
+  });
+
   return (
     <div className="skills">
       <div className="skills-wrapper">
@@ -95,7 +115,9 @@ function Skills() {
           btn={"+"}
           btnOnClick={showModal}
         ></SectionTitle>
+
         <div className="icons-user">{skillItems}</div>
+
         {isModalVisible && (
           <div className="icon-selection">
             {skillGallery.map((skill) => (
