@@ -20,7 +20,7 @@
     z-index: 2;
 }
 
-textarea {
+.editable-text-area textarea {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -30,7 +30,7 @@ textarea {
     border: 1px solid var(--purple);
 }
 
-button {
+.editable-text-area button {
     position: absolute;
     right: 0rem;
     bottom: -2rem;
@@ -47,7 +47,7 @@ button {
 
 }
 
-button:hover {
+.editable-text-area button:hover {
     transform: translateY(1px);
 }
 

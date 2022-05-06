@@ -17,8 +17,8 @@ import SectionTitle from "../section-title/SectionTitle.js";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
 function Skills() {
-  /* ---------- Skills Component ----------*/
-  /* --- States ---
+  /* ---------- Skills Component ----------
+     --- States ---
      1. userSkills: Array of skills of the current user. Since this is just a front-end project 
                     it simply has the icons to be displayed.
 
@@ -33,6 +33,7 @@ function Skills() {
   */
   const [userSkills, setUserSkills] = useState([faJsSquare, faHtml5]);
   const [skillGallery, setSkillGallery] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const allSkillsList = [
     faJsSquare,
@@ -49,6 +50,12 @@ function Skills() {
   useEffect(() => {
     loadSkillGallery();
   }, [userSkills]);
+
+  const skillItems = userSkills.map((skill) => {
+    return (
+      <FontAwesomeIcon key={skill.iconName} icon={skill} className="icon" />
+    );
+  });
 
   const loadSkillGallery = () => {
     setSkillGallery(
@@ -72,28 +79,39 @@ function Skills() {
     console.log(userSkills);
   };
 
-  const skillItems = userSkills.map((skill) => {
-    return (
-      <FontAwesomeIcon key={skill.iconName} icon={skill} className="icon" />
-    );
-  });
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const hideModal = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <div className="skills">
-      <SectionTitle title={"skills"}></SectionTitle>
-
-      <div className="icons-user">{skillItems}</div>
-
-      <div className="icon-selection">
-        {skillGallery.map((skill) => (
-          <FontAwesomeIcon
-            key={skill.iconName}
-            icon={skill}
-            className="icon"
-            onClick={addSkill}
-          />
-        ))}
+      <div className="skills-wrapper">
+        <SectionTitle
+          title={"skills"}
+          btn={"+"}
+          btnOnClick={showModal}
+        ></SectionTitle>
+        <div className="icons-user">{skillItems}</div>
+        {isModalVisible && (
+          <div className="icon-selection">
+            {skillGallery.map((skill) => (
+              <FontAwesomeIcon
+                key={skill.iconName}
+                icon={skill}
+                className="icon"
+                onClick={addSkill}
+              />
+            ))}
+          </div>
+        )}
       </div>
+      {isModalVisible && (
+        <div className="close-modal" onClick={hideModal}></div>
+      )}
     </div>
   );
 }
