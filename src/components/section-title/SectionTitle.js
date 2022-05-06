@@ -5,7 +5,11 @@ function SectionTitle({ title, hAlignment, btn, btnOnClick }) {
   return (
     <div className="section-title" style={{ justifyContent: hAlignment }}>
       {title}
-      {btn && <button onClick={btnOnClick}>{btn}</button>}
+      {btn && (
+        <button className="btn-round btn--yellow" onClick={btnOnClick}>
+          {btn}
+        </button>
+      )}
     </div>
   );
 }

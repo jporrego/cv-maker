@@ -1,4 +1,6 @@
-.editable-text-area {}
+.editable-text-area {
+    overflow-wrap: anywhere
+}
 
 .static-text {
     position: relative;

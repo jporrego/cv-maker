@@ -128,6 +128,9 @@ function Skills() {
                 onClick={addSkill}
               />
             ))}
+            <button className="btn-round btn--red" onClick={hideModal}>
+              x
+            </button>
           </div>
         )}
       </div>

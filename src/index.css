@@ -9,6 +9,7 @@
   --purple: #985EBF;
   --purple-light: #BF7EAE;
   --yellow: #F2A950;
+  --red: #e44a85;
   /* Fonts */
   --font-primary: 'Open Sans', sans-serif;
   /* Utilities */
@@ -30,4 +31,31 @@ html {
 body {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.btn-round {
+  border-radius: 20rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  transition: all .1s ease-out;
+  cursor: pointer;
+}
+
+.btn-round:hover {
+  filter: brightness(1.1);
+}
+
+.btn--yellow {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.btn--red {
+  background-color: var(--red);
+  color: var(--white);
 }
