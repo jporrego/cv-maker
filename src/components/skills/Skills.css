@@ -45,6 +45,10 @@
 
 }
 
+.icon-container {
+    position: relative;
+}
+
 .icon {
     height: 3rem;
     color: var(--purple-dark);
@@ -54,6 +58,17 @@
 .icon:hover {
     color: var(--purple);
     transform: scale(1.05);
+}
+
+.icon-container button {
+    position: absolute;
+    right: -1rem;
+    border: none;
+    background-color: var(--red);
+    color: var(--white);
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 500px;
 }
 
 .close-modal {

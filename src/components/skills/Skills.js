@@ -98,12 +98,14 @@ function Skills() {
 
   const skillItems = userSkills.map((skill) => {
     return (
-      <FontAwesomeIcon
-        key={skill.iconName}
-        icon={skill}
-        className="icon"
-        onClick={deleteSkill}
-      />
+      <div className="icon-container">
+        <FontAwesomeIcon
+          key={skill.iconName}
+          icon={skill}
+          className="icon"
+          onClick={deleteSkill}
+        />
+      </div>
     );
   });
 
