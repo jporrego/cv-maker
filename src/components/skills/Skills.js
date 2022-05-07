@@ -13,6 +13,7 @@ import {
   faPhp,
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
+import uniqid from "uniqid";
 import SectionTitle from "../section-title/SectionTitle.js";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
@@ -70,13 +71,12 @@ function Skills() {
     );
 
     setUserSkills([...userSkills, newIcon[0]]);
-    console.log(iconName);
   };
 
   const deleteSkill = (e) => {
     let iconName = "";
 
-    if (e.target.parentNode.className === "icons-user") {
+    if (e.target.parentNode.className === "icon-container") {
       iconName = e.target.attributes[3].value;
     } else {
       iconName = e.target.parentNode.attributes[3].value;
@@ -98,13 +98,8 @@ function Skills() {
 
   const skillItems = userSkills.map((skill) => {
     return (
-      <div className="icon-container">
-        <FontAwesomeIcon
-          key={skill.iconName}
-          icon={skill}
-          className="icon"
-          onClick={deleteSkill}
-        />
+      <div className="icon-container" key={uniqid()}>
+        <FontAwesomeIcon icon={skill} className="icon" onClick={deleteSkill} />
       </div>
     );
   });
@@ -124,7 +119,7 @@ function Skills() {
           <div className="icon-selection">
             {skillGallery.map((skill) => (
               <FontAwesomeIcon
-                key={skill.iconName}
+                key={uniqid()}
                 icon={skill}
                 className="icon"
                 onClick={addSkill}
