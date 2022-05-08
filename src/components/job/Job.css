@@ -2,7 +2,7 @@
     margin-bottom: 2rem;
 }
 
-.static-text, .job-form {
+.job .static-text {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto max-content 8rem;
@@ -10,6 +10,18 @@
         "position    company"
         "date        date"
         "description description";
+    gap: .25rem;
+}
+
+.job .job-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto max-content 8rem;
+    grid-template-areas:
+        "position    company"
+        "date        date"
+        "description description"
+        "button button";
     gap: .25rem;
 }
 
@@ -49,7 +61,11 @@
 }
 
 /* ------------ Form Styles ---------------- */
-.job-form input, .job-form textarea {
+.job-form {
+    position: relative;
+}
+
+.job-form input, .job-form>textarea {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -63,26 +79,24 @@
 .position-input {
     grid-area: position;
     text-align: right;
-    letter-spacing: .1rem;
 }
 
 .company-input {
     grid-area: company;
-    font-size: 1.3rem;
-    letter-spacing: .1rem;
 }
 
 .date-input {
     grid-area: date;
     text-align: right;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
+
 }
 
 .description-input {
     grid-area: description;
-    font-size: 1.1rem;
-    font-weight: 500;
 
+}
+
+.job-form button {
+    grid-area: button;
+    justify-self: right;
 }

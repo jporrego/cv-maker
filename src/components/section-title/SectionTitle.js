@@ -4,8 +4,13 @@ import "./SectionTitle.css";
 function SectionTitle({ title, hAlignment, btn, btnOnClick }) {
   return (
     <div className="section-title" style={{ justifyContent: hAlignment }}>
+      {hAlignment && btn && (
+        <button className="btn-round btn--yellow" onClick={btnOnClick}>
+          {btn}
+        </button>
+      )}
       {title}
-      {btn && (
+      {!hAlignment && btn && (
         <button className="btn-round btn--yellow" onClick={btnOnClick}>
           {btn}
         </button>

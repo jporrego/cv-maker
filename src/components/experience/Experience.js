@@ -7,10 +7,7 @@ import uniqid from "uniqid";
 function Experience() {
   const [jobs, setJobs] = useState([]);
 
-  useEffect(() => {
-    getJobs();
-  }, []);
-
+  /* Saving getJobs in case a backend is implemented later on.
   const getJobs = () => {
     const jobData = [
       {
@@ -31,19 +28,21 @@ function Experience() {
 
     setJobs(jobData);
   };
+  */
 
+  const addJob = () => {
+    setJobs([...jobs, <Job></Job>]);
+    console.log(jobs);
+  };
   return (
     <div className="experience">
-      <SectionTitle title={"experience"} hAlignment={"flex-end"}></SectionTitle>
-      {jobs.map((job) => (
-        <Job
-          position={job.position}
-          company={job.company}
-          date={job.date}
-          description={job.description}
-          key={uniqid()}
-        ></Job>
-      ))}
+      <SectionTitle
+        title={"experience"}
+        hAlignment={"flex-end"}
+        btn={"+"}
+        btnOnClick={addJob}
+      ></SectionTitle>
+      {jobs.map((job) => job)}
     </div>
   );
 }

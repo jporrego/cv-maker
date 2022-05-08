@@ -34,7 +34,7 @@ function EditableTextArea({ text, setText }) {
         onChange={(e) => setText(e.target.value)}
         maxLength={290}
       ></textarea>
-      <button type="button" onClick={showForm}>
+      <button className="btn-square" type="button" onClick={showForm}>
         Save
       </button>
     </div>
