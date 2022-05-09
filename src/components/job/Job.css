@@ -4,7 +4,7 @@
 
 .job .static-text {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 75% 1fr;
     grid-template-rows: auto max-content 8rem;
     grid-template-areas:
         "position    company"
@@ -36,13 +36,20 @@
 
 .company {
     grid-area: company;
+    position: relative;
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: .1rem;
+    padding-left: .4rem;
 }
 
 .company::before {
-    content: "|";
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: black;
 }
 
 .date {

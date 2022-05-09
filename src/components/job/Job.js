@@ -37,6 +37,7 @@ function Job({ id, position, company, date, description, onDelete }) {
         className="position-input"
         placeholder="Position"
         onChange={(e) => editJob(e)}
+        maxLength={40}
       />
       <input
         type="text"
@@ -45,6 +46,7 @@ function Job({ id, position, company, date, description, onDelete }) {
         className="company-input"
         placeholder="Company"
         onChange={(e) => editJob(e)}
+        maxLength={40}
       />
       <input
         type="text"
@@ -53,6 +55,7 @@ function Job({ id, position, company, date, description, onDelete }) {
         className="date-input"
         placeholder="December 2020 - Present"
         onChange={(e) => editJob(e)}
+        maxLength={20}
       />
 
       <textarea
