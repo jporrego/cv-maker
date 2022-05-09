@@ -7,7 +7,7 @@ import uniqid from "uniqid";
 function Experience() {
   const [jobs, setJobs] = useState([]);
 
-  /* Saving getJobs in case a backend is implemented later on.
+  /*
   const getJobs = () => {
     const jobData = [
       {
@@ -15,7 +15,8 @@ function Experience() {
         position: "Full Stack Developer",
         company: "Google",
         date: "November 2022-Present",
-        description: "Asd",
+        description:
+          "Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as ",
       },
       {
         id: uniqid(),
@@ -27,13 +28,38 @@ function Experience() {
     ];
 
     setJobs(jobData);
-  };
-  */
+  };*/
 
   const addJob = () => {
-    setJobs([...jobs, <Job></Job>]);
-    console.log(jobs);
+    /*
+    const loadDefaultJobs = true;
+
+    if (loadDefaultJobs) {
+      // later
+    }*/
+    if (jobs.length < 3) {
+      const newKey = uniqid();
+      setJobs([
+        ...jobs,
+        <Job
+          key={newKey}
+          id={newKey}
+          position={"Position"}
+          company={"Company"}
+          date={"2020 - Present"}
+          description={"Description"}
+          onDelete={deleteJob}
+        ></Job>,
+      ]);
+    }
   };
+
+  function deleteJob(e, id) {
+    e.preventDefault();
+    const newJobsArray = [...jobs].filter((job) => job.key != id);
+    setJobs(newJobsArray);
+  }
+
   return (
     <div className="experience">
       <SectionTitle

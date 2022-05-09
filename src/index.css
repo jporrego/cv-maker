@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
   --black: #11151f;
@@ -11,7 +12,7 @@
   --yellow: #F2A950;
   --red: #e44a85;
   /* Fonts */
-  --font-primary: 'Open Sans', sans-serif;
+  --font-primary: 'Roboto', sans-serif;
   /* Utilities */
   --big-padding: 2rem;
   --small-padding: 1rem;
@@ -51,22 +52,11 @@ body {
   filter: brightness(1.1);
 }
 
-.btn--yellow {
-  background-color: var(--yellow);
-  color: var(--white);
-}
-
-.btn--red {
-  background-color: var(--red);
-  color: var(--white);
-}
-
 .btn-square {
   border: none;
   font-size: 1.4rem;
   font-weight: 600;
-  background-color: var(--purple);
-  color: var(--white);
+
   padding: .4rem;
   border-radius: .5rem;
   transition: all 0.15s ease-out;
@@ -77,4 +67,19 @@ body {
 
 .btn-square:hover {
   transform: translateY(1px);
+}
+
+.btn--yellow {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.btn--red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn--purple {
+  background-color: var(--purple);
+  color: var(--white);
 }

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import EditableTextArea from "../editable/editable-text-area/EditableTextArea.js";
 import "./Job.css";
 
-function Job() {
+function Job({ id, position, company, date, description, onDelete }) {
   const [jobData, setJobData] = useState({
-    position: "",
-    company: "",
-    date: "",
-    description: "",
+    position: position,
+    company: company,
+    date: date,
+    description: description,
   });
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   const editJob = (e) => {
     const newJobData = { ...jobData };
@@ -17,7 +17,6 @@ function Job() {
     const inputValue = e.target.value;
     newJobData[inputId] = inputValue;
     setJobData(newJobData);
-    console.log(jobData);
   };
 
   const staticText = (
@@ -30,7 +29,7 @@ function Job() {
   );
 
   const form = (
-    <div className="job-form">
+    <form className="job-form">
       <input
         type="text"
         value={jobData.position}
@@ -64,10 +63,21 @@ function Job() {
         placeholder="Description"
         onChange={(e) => editJob(e)}
       ></textarea>
-      <button className="btn-square" onClick={() => setShowForm(false)}>
-        Done
-      </button>
-    </div>
+      <div className="buttons">
+        <button
+          className="btn-square btn--red"
+          onClick={(e) => onDelete(e, id)}
+        >
+          Delete
+        </button>
+        <button
+          className="btn-square btn--purple"
+          onClick={() => setShowForm(false)}
+        >
+          Save
+        </button>
+      </div>
+    </form>
   );
 
   return <div className="job">{showForm ? form : staticText}</div>;
