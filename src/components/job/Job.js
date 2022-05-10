@@ -29,7 +29,7 @@ function Job({ id, position, company, date, description, onDelete }) {
   );
 
   const form = (
-    <form className="job-form">
+    <div className="job-form">
       <input
         type="text"
         value={jobData.position}
@@ -80,7 +80,7 @@ function Job({ id, position, company, date, description, onDelete }) {
           Save
         </button>
       </div>
-    </form>
+    </div>
   );
 
   return <div className="job">{showForm ? form : staticText}</div>;

@@ -18,15 +18,15 @@ function Study({ id, title, university, date, onDelete }) {
   };
 
   const staticText = (
-    <div className="static-text" onClick={() => setShowForm(true)}>
-      <div className="title">{studyData.title}</div>
-      <div className="university">{studyData.university}</div>
-      <div className="date">{studyData.date}</div>
+    <div className="study-static-text" onClick={() => setShowForm(true)}>
+      <div className="study-title">{studyData.title}</div>
+      <div className="study-university">{studyData.university}</div>
+      <div className="study-date">{studyData.date}</div>
     </div>
   );
 
   const form = (
-    <form className="study-form">
+    <div className="study-form">
       <input
         type="text"
         value={studyData.title}
@@ -69,7 +69,7 @@ function Study({ id, title, university, date, onDelete }) {
           Save
         </button>
       </div>
-    </form>
+    </div>
   );
 
   return <div className="study">{showForm ? form : staticText}</div>;

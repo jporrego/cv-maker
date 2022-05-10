@@ -15,26 +15,10 @@ function Experience() {
     const jobData = [
       {
         id: uniqid(),
-        position: "Full Stack Developer",
-        company: "Google",
-        date: "November 2022-Present",
-        description:
-          "Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as ",
-      },
-      {
-        id: uniqid(),
-        position: "Full Stack Developer",
-        company: "Usurus",
-        date: "November 2022-Present",
-        description:
-          "Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as dkasd.Worked as a developer for a long time. Etc etc it as as ",
-      },
-      {
-        id: uniqid(),
-        position: "Front End Developer",
-        company: "Facebook",
-        date: "November 2022-Present",
-        description: "Bosoo",
+        position: "Position",
+        company: "Company",
+        date: "month yyyy - month yyyy",
+        description: "Brief job description",
       },
     ];
 

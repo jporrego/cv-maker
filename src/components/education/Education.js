@@ -18,51 +18,22 @@ function Education() {
         university: "Place of education",
         date: "yyyy-yyyy",
       },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
-      {
-        id: uniqid(),
-        title: "Computer Science",
-        university: "University of British Columbia",
-        date: "2015-2020",
-      },
     ];
 
     setStudies(studiesData);
   };
 
   const addStudy = () => {
-    if (studies.length < 6) {
-      const newKey = uniqid();
-      setStudies([...studies, {}]);
+    if (studies.length < 5) {
+      setStudies([
+        ...studies,
+        {
+          id: uniqid(),
+          title: "Title",
+          university: "Place of education",
+          date: "yyyy-yyyy",
+        },
+      ]);
     }
   };
 
