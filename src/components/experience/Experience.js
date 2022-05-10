@@ -8,11 +8,10 @@ function Experience() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    // Update the document title using the browser API
-    getJobs();
+    getInitialJobs();
   }, []);
 
-  const getJobs = () => {
+  const getInitialJobs = () => {
     const jobData = [
       {
         id: uniqid(),
@@ -43,12 +42,6 @@ function Experience() {
   };
 
   const addJob = () => {
-    /*
-    const loadDefaultJobs = true;
-
-    if (loadDefaultJobs) {
-      // later
-    }*/
     if (jobs.length < 3) {
       const newKey = uniqid();
       setJobs([
