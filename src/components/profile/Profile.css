@@ -1,0 +1,48 @@
+.profile {
+    grid-area: profile;
+    margin: 2rem 0px;
+}
+
+.profile-static-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    align-items: center;
+    height: 100%;
+}
+
+.name-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(165deg, var(--blue) 0%, var(--purple-dark) 45%, var(--purple) 70%, var(--yellow) 100%);
+    padding: .2rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+    padding: .5rem 4rem;
+    background-color: white;
+
+}
+
+.ocupation {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+}
+
+.profile-pic {
+    width: 11rem;
+    height: 11rem;
+    background: url("../../assets/img/test1.jpg");
+    background-color: red;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50rem;
+}

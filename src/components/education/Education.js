@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Education.css";
 import SectionTitle from "../section-title/SectionTitle.js";
-import Study from "../Study/Study.js";
+import Study from "../study/Study.js";
 import uniqid from "uniqid";
 
 function Education() {
