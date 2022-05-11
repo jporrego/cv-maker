@@ -35,15 +35,10 @@
     letter-spacing: 0.15rem;
 }
 
-.profile-pic {
-    width: 11rem;
-    height: 11rem;
-    background: url("../../assets/img/test1.jpg");
-    background-color: red;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50rem;
+.contact {
+    display: flex;
+    gap: 1rem;
+    font-weight: 400;
 }
 
 /* ------------ Form Styles ---------------- */

@@ -20,8 +20,8 @@ function Profile() {
         {ocupation}
       </div>
       <div className="contact" onClick={() => setShowForm(true)}>
-        {email}
-        {phone}
+        <div>{email}</div>
+        <div>{phone}</div>
       </div>
     </div>
   );
