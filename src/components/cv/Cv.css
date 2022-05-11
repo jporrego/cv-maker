@@ -8,7 +8,7 @@
         "experience education";
     width: 67.0rem;
     min-height: 84.4rem;
-    padding: 1rem;
+    padding: 1rem 1rem 5rem 1rem;
     background-color: var(--white);
     color: var(--black);
 }
