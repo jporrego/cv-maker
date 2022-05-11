@@ -4,9 +4,7 @@ import SectionTitle from "../section-title/SectionTitle.js";
 import EditableTextArea from "../editable/editable-text-area/EditableTextArea.js";
 
 function Introduction() {
-  const [introValue, setIntroValue] = useState(
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis ad ratione dignissimos iste beatae illo veniam vel facere rem tenetur    doloremque dicta quibusdam, sed quisquam voluptatibus laudantium, fuga    fugiat velit."
-  );
+  const [introValue, setIntroValue] = useState("Introduction...");
 
   return (
     <div className="introduction">

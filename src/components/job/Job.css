@@ -85,11 +85,13 @@
 
 .job-form .position-input {
     grid-area: position;
+
     text-align: right;
 }
 
 .job-form .company-input {
     grid-area: company;
+
 }
 
 .job-form .date-input {
